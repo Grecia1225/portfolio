@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Thella Grecia Sannuthi — AI Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#05050b;--ink:#f3efe8;--mute:#9a98ae;--ember:#ff4b1f;--glow:#ff8a4c;--panel:#0e0d1a;--line:#26233d;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Outfit,system-ui,sans-serif;font-weight:300;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}:focus-visible{outline:2px solid var(--glow);outline-offset:4px}
+img:not([src]){display:none}
+#loader{position:fixed;inset:0;z-index:50;background:var(--bg);display:grid;place-content:center;text-align:center;transition:transform 1s cubic-bezier(.8,0,.2,1)}
+#loader.done{transform:translateY(-101%)}#count{font-size:clamp(4rem,16vw,9rem);font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.bar{height:2px;width:min(240px,60vw);background:var(--line);margin:1.2rem auto 0}.bar i{display:block;height:100%;width:0;background:var(--ember)}
+nav{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:20;display:flex;justify-content:space-between;gap:1rem;padding:1.3rem clamp(1.2rem,4vw,3rem);mix-blend-mode:difference}
+nav b{font-weight:600}nav div{display:flex;gap:1.3rem;font-size:.9rem}@media(max-width:760px){nav div a:not(:last-child){display:none}}
+.hero{height:220svh;--p:0}
+.stick{position:sticky;top:0;height:100svh;overflow:hidden;display:grid;place-items:center;background:radial-gradient(80% 70% at 70% 40%,#2b1530,#05050b)}
+.mq{position:absolute;inset:0;display:flex;align-items:center;overflow:hidden;pointer-events:none}
+.mq div{display:flex;white-space:nowrap;animation:mq 45s linear infinite}
+.mq span{font-size:clamp(6rem,22vw,20rem);font-weight:800;-webkit-text-stroke:1px rgba(243,239,232,.16);color:transparent;padding-right:2rem}
+@keyframes mq{to{transform:translateX(-50%)}}
+.hgrid{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center;width:100%;padding:5rem clamp(1.2rem,6vw,5rem) 2rem}
+@media(max-width:860px){.hgrid{grid-template-columns:1.1fr .9fr;gap:.8rem;padding:4.5rem 1rem 1.5rem}.portrait{height:min(47svh,76vw)!important}h1{font-size:clamp(1.5rem,7.2vw,3rem)}.bio{font-size:.78rem}.roles{font-size:.95rem}.fn{font-size:.6rem;letter-spacing:.15em}.cta .btn{padding:.45rem .85rem;font-size:.8rem}}
+.fn{font-size:.6rem;letter-spacing:.15em}.cta .btn{padding:.45rem .85rem;font-size:.8rem}}
+.fn{font-size:.8rem;letter-spacing:.25em;color:var(--mute)}
+h1{margin:.5rem 0 0;font-size:clamp(2.4rem,7.5vw,6.5rem);font-weight:800;line-height:.95;letter-spacing:-.02em;text-transform:uppercase}
+h1 .w{display:block}h1 .l{display:inline-block;font-variation-settings:'wght' 300;font-weight:300}
+.portrait{position:relative;isolation:isolate;justify-self:center;height:min(75svh,115vw);aspect-ratio:3/4;border-radius:0;overflow:hidden;background:#f4f1ea;--x:50%;--y:40%;box-shadow:0 30px 90px color-mix(in srgb,var(--ember) 30%,transparent)}
+.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.portrait .a,.portrait .b{display:none}
+.portrait .c{opacity:1}
+body.ed .portrait{cursor:pointer}body.ed .portrait::after{content:'\FF0B  Your photo';position:absolute;left:.6rem;right:.6rem;bottom:.6rem;text-align:center;font-size:.8rem;background:rgba(0,0,0,.65);color:#fff;padding:.3rem;border-radius:8px;z-index:5}
+.roles b{color:var(--glow);font-weight:700}
+.roles{font-size:clamp(1.1rem,2.6vw,1.8rem);font-weight:500;margin:.8rem 0 0}
+.bio{max-width:38rem;color:#d9d6e3;font-size:1.05rem;margin:.6rem 0 0}
+.cta{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.2rem}
+.btn{padding:.7rem 1.5rem;border-radius:99px;border:1px solid rgba(255,255,255,.35);font:inherit;font-weight:500;color:inherit;background:rgba(0,0,0,.25);cursor:pointer;backdrop-filter:blur(6px)}
+.btn.hot{background:var(--ember);border-color:var(--ember);color:#fff}.btn:hover{border-color:var(--glow)}
+#blob{position:fixed;left:0;top:0;width:30vmax;height:30vmax;margin:-15vmax 0 0 -15vmax;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--ember) 40%,transparent),transparent 70%);filter:blur(40px);pointer-events:none;z-index:0}
+section.s{position:relative;z-index:1;isolation:isolate;padding:7rem clamp(1.2rem,6vw,5rem)}
+.bgs{position:absolute;inset:0;z-index:-1;background-size:cover;background-position:center;background-attachment:fixed;opacity:.28}
+.bgb{display:none;position:absolute;top:1rem;right:1rem;z-index:5;padding:.4rem .9rem}body.ed .bgb{display:block}
+h3.sec{font-size:clamp(2rem,6vw,4.5rem);font-weight:700;margin:0 0 .6rem;letter-spacing:-.02em}
+.lead{color:var(--mute);max-width:38rem;margin:0 0 2.5rem}
+.tl{border-top:1px solid var(--line)}.tl div{display:grid;grid-template-columns:minmax(130px,1fr) 4fr;gap:.6rem 2rem;padding:1.6rem 0;border-bottom:1px solid var(--line)}
+@media(max-width:600px){.tl div{grid-template-columns:1fr}}.tl time{color:var(--glow)}.tl h4{margin:0;font-size:1.4rem;font-weight:600}.tl p{margin:.2rem 0 0;color:var(--mute);max-width:42rem}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:1.2rem}
+.card,.grp{background:rgba(14,13,26,.85);border:1px solid var(--line);border-radius:18px;padding:1.4rem}.card:hover{border-color:var(--ember)}
+.card h4,.grp h4{margin:0 0 .3rem;font-size:1.2rem;font-weight:600}.card p{margin:0;color:var(--mute);font-size:.95rem}
+.tags{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.8rem}.tags i{font-style:normal;font-size:.8rem;border:1px solid var(--line);border-radius:99px;padding:.15rem .7rem;color:var(--ink)}
+.links{display:flex;gap:1rem;margin-top:.9rem;font-size:.9rem}.links a{color:var(--glow)}
+.frame{position:relative;border-radius:16px;overflow:hidden;display:grid;place-content:center;text-align:center;color:rgba(255,255,255,.75);font-size:.9rem;padding:1rem;border:1px solid var(--line)}
+.frame img,.frame video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.g1{background:linear-gradient(160deg,#ff4b1f,#2b0a2e)}.g2{background:linear-gradient(160deg,#2a6bff,#07102b)}.g3{background:linear-gradient(160deg,#7a3cff,#14081f)}.g4{background:linear-gradient(160deg,#0fa3b1,#04121a)}.g5{background:linear-gradient(160deg,#ffb347,#2a1405)}
+.strip{display:flex;gap:1.2rem;overflow-x:auto;padding-bottom:1rem;scroll-snap-type:x mandatory}.strip .frame{flex:0 0 clamp(220px,28vw,320px);aspect-ratio:3/4;scroll-snap-align:start}
+.art{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:1.2rem}.art .frame{aspect-ratio:1}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:2rem;align-items:center}.two .frame{aspect-ratio:4/5}
+.song{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin:0 0 1.5rem}
+.yt{display:none;font:inherit;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:.6rem .9rem;min-width:min(100%,280px)}body.ed .yt{display:block}
+form{max-width:34rem;margin:2rem auto 0;display:grid;gap:1rem;text-align:left}label{display:grid;gap:.4rem;font-size:.9rem;color:var(--mute)}
+input,textarea{font:inherit;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:.9rem 1rem;width:100%}textarea{min-height:7rem}
+#msg{text-align:center;color:var(--glow);margin:0;min-height:1.4rem}footer{position:relative;z-index:1;text-align:center;color:var(--mute);padding:2rem 1rem 3rem;font-size:.9rem}
+body.ed [contenteditable=true]{outline:1px dashed var(--glow);outline-offset:4px;cursor:text}body.ed .frame[data-s]{cursor:pointer}
+body.ed .frame[data-s]::after{content:'\FF0B  Photo or short video';position:absolute;left:.5rem;right:.5rem;bottom:.5rem;font-size:.78rem;background:rgba(0,0,0,.65);color:#fff;padding:.25rem;border-radius:8px;z-index:5}
+#bar{position:fixed;z-index:60;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom,0px));display:flex;gap:.6rem;align-items:center;flex-wrap:wrap;justify-content:flex-end;max-width:calc(100% - 2rem);background:rgba(14,13,26,.92);border:1px solid var(--line);border-radius:22px;padding:.5rem .6rem}
+#bar .btn{padding:.5rem 1rem}#bar input[type=color]{width:34px;height:34px;padding:0;border:0;border-radius:50%;background:none}#etip{display:none;font-size:.8rem;color:var(--mute);padding:0 .6rem;max-width:20rem}
+body.ed #etip{display:block}.eo{display:none!important}body.ed .eo{display:inline-block!important}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}#blob{display:none}}
+</style></head><body>
+<div id="loader"><div><div id="count">0</div><div class="bar"><i id="fill"></i></div></div></div><div id="blob" aria-hidden="true"></div>
+<nav><b>Grecia</b><div><a href="#exp">Experience</a><a href="#work">Projects</a><a href="#stack">Toolkit</a><a href="#life">Beyond code</a><a href="#contact">Say hello +</a></div></nav>
+
+<section class="hero" id="hero"><div class="stick">
+<div class="mq" aria-hidden="true"><div><span>AI ENGINEER · ARTIST · SINGER · GUITARIST · LEADER · </span><span>AI ENGINEER · ARTIST · SINGER · GUITARIST · LEADER · </span></div></div>
+<div class="hgrid"><div class="ht"><div class="fn">B.TECH CSE (AI) · METHODIST COLLEGE</div>
+<h1 id="name" aria-label="Thella Grecia Sannuthi"></h1>
+<p class="roles">I'm an <b id="role">AI engineer</b></p>
+<p class="bio">Wins hackathons, ships prototypes, draws on the side. Strong in NLP, deep in LLM right now. Design team lead, GDGC and IEEE member.</p>
+<div class="cta"><a class="btn hot" href="https://github.com/Grecia1225" target="_blank" rel="noopener">GitHub</a><a class="btn" href="https://www.linkedin.com/in/grecia007/" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="#exp">See my work ↓</a></div></div>
+<div class="portrait" id="portrait" role="img" aria-label="Portrait of Thella Grecia Sannuthi"><img class="a" alt=""><img class="b" alt=""><img class="c" alt=""></div>
+</div></div></section>
+
+<section class="s" style="text-align:center;padding:5rem 1.5rem"><p style="margin:0 auto;max-width:48rem;font-size:clamp(1.8rem,5.5vw,4rem);font-weight:700;line-height:1.1;letter-spacing:-.02em">“Great things take time. <span style="color:var(--glow)">Never quit.</span>”</p></section>
+<section class="s" id="exp" data-bg><h3 class="sec">Experience</h3><p class="lead">Receipts, not claims.</p>
+<div class="tl">
+<div><time>May – Jul 2026</time><span><h4>Machine Learning Intern · GenZ Education Wing</h4><p>Built NLP models for fake news detection and sentiment analysis, plus an AI decision-tree generator that turns a question into an interactive flowchart.</p></span></div>
+<div><time>May – Jul 2025</time><span><h4>Web Development Intern · Plasmid</h4><p>Built a hotel booking app, a calculator and a validated registration form with responsive layouts, using Git and GitHub.</p></span></div>
+<div><time>2025</time><span><h4>Winner · BITS Pilani Autown '25</h4><p>National-level hackathon, cybersecurity track, with CyberShield, a phishing URL detector.</p></span></div>
+<div><time>Hackathons</time><span><h4>10 entered, 2 won</h4><p>Winner at Savishkar (college level), Smart India Hackathon selection, and a spot in the Innomatics Research Labs program through my OMR project.</p></span></div>
+<div><time>Leading</time><span><h4>Design Team Lead · The Literature Club</h4><p>Leading UI, posters and branding for campus events. Also on the GDGC App Development team and IEEE's social media team.</p></span></div>
+<div><time>Trained</time><span><h4>Certifications &amp; training</h4><p>Oracle Generative AI badge, Cisco IoT, NPTEL HCL MOOC (90%), AICTE Data Science and Cybersecurity, CDAC Cybersecurity Bootcamp.</p></span></div>
+</div></section>
+
+<section class="s" id="work" data-bg><h3 class="sec">Things I made</h3><p class="lead">Built, shipped, demoed.</p><div class="g"><div class="card"><h4>CyberShield</h4><p>Flask app that spots phishing and spam links with heuristic URL analysis. Won BITS Pilani Autown '25.</p></div><div class="card"><h4>Vouch · in progress</h4><p>A web-based digital notary with LLM document analysis and compliant eSign.</p></div><div class="card"><h4>OMR Evaluation System</h4><p>Reads and scores answer sheets from phone photos with OpenCV. Got me into Innomatics.</p><div class="links"><a href="https://omr-evaluation-system-hehvqqqvzmvdnypmb2ez8q.streamlit.app/" target="_blank" rel="noopener">Live demo</a><a href="https://github.com/Grecia1225/omr-evaluation-system" target="_blank" rel="noopener">GitHub</a></div></div><div class="card"><h4>SchemeSathi</h4><p>Bilingual web app matching citizens to government welfare schemes, built for Savishkar.</p><div class="links"><a href="https://schemesathi-islz.onrender.com" target="_blank" rel="noopener">Live demo</a><a href="https://github.com/Grecia1225/Savishkar_Hackathon" target="_blank" rel="noopener">GitHub</a></div></div><div class="card"><h4>NLP Projects</h4><p>Fake news classifier (98.89% accuracy) and a BERT tweet sentiment analyzer.</p><div class="links"><a href="https://github.com/Grecia1225/NLP-Projects" target="_blank" rel="noopener">GitHub</a></div></div><div class="card"><h4>Marine Trade Connect</h4><p>Flutter and Firebase marketplace for marine buyers, sellers and shippers.</p><div class="links"><a href="https://github.com/Grecia1225/MiniProjectAndroidApp" target="_blank" rel="noopener">GitHub</a></div></div></div></section>
+
+<section class="s" id="stack" data-bg><h3 class="sec">The toolkit</h3><p class="lead">My loadout.</p><div class="g"><div class="grp"><h4>Languages</h4><div class="tags"><i>Python</i><i>Java</i><i>C</i><i>JavaScript</i><i>SQL</i></div></div><div class="grp"><h4>Frameworks &amp; tools</h4><div class="tags"><i>Flask</i><i>Flutter</i><i>Firebase</i><i>Figma</i><i>Git</i><i>GitHub</i><i>Jupyter</i><i>Colab</i><i>Android Studio</i></div></div><div class="grp"><h4>Libraries &amp; AI</h4><div class="tags"><i>NumPy</i><i>Pandas</i><i>scikit-learn</i><i>PyTorch</i><i>Hugging Face</i><i>LLMs</i><i>Prompt engineering</i></div></div><div class="grp"><h4>Interests</h4><div class="tags"><i>NLP</i><i>LLM</i><i>Cybersecurity</i><i>IoT</i><i>Art</i><i>Music</i><i>Photography</i></div></div></div></section>
+
+<section class="s" id="life" data-bg><h3 class="sec">Leadership</h3><p class="lead">Leading teams, on stage and off it.</p>
+<div class="two"><div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem"><div class="frame g5" data-s="podium"><span>Your podium photo</span></div><div class="frame g1" data-s="podium2"><span>Leadership photo 2</span></div></div>
+<div><h4 style="font-size:1.6rem;margin:0 0 .5rem;font-weight:600">Design Team Lead, The Literature Club</h4><p class="lead" style="margin:0">I lead members through UI, posters and branding for events like Teachers' Day and the NSS cell, manage timelines and review every output before it ships.</p></div></div></section>
+
+<section class="s" id="lens" data-bg><h3 class="sec">Through my lens</h3><p class="lead">Moments I stopped to capture. Scroll sideways.</p>
+<div class="strip" tabindex="0" aria-label="Photo gallery"><div class="frame g4" data-s="l1"><span>Photo 1</span></div><div class="frame g1" data-s="l2"><span>Photo 2</span></div><div class="frame g3" data-s="l3"><span>Photo 3</span></div><div class="frame g2" data-s="l4"><span>Photo 4</span></div><div class="frame g5" data-s="l5"><span>Photo 5</span></div></div></section>
+
+<section class="s" id="art" data-bg><h3 class="sec">The artist</h3><p class="lead">Drawings and short clips, made by hand.</p>
+<div class="art"><div class="frame g1" data-s="a1"><span>Drawing 1</span></div><div class="frame g2" data-s="a2"><span>Drawing 2</span></div><div class="frame g3" data-s="a3"><span>Drawing 3</span></div><div class="frame g5" data-s="a4"><span>Drawing 4</span></div></div></section>
+
+<section class="s" id="startup" data-bg><h3 class="sec">My little startup</h3><p class="lead">Hand-drawn art cards, each with its own creative touch. Pocket-sized cards and bookmarks, perfect for gifting, collecting or adding a little colour to someone's day. Affordable and thoughtful.</p>
+<div class="art"><div class="frame g1" data-s="c1" style="aspect-ratio:4/5"><span>Art card 1</span></div><div class="frame g3" data-s="c2" style="aspect-ratio:4/5"><span>Art card 2</span></div><div class="frame g5" data-s="c3" style="aspect-ratio:4/5"><span>Bookmark</span></div></div>
+<div class="cta"><a class="btn hot" href="mailto:thellagrecia@gmail.com?subject=Art%20cards">Interested? Reach out</a></div></section>
+<section class="s" id="music" data-bg><h3 class="sec">Voice &amp; strings</h3><p class="lead">A song I wrote and composed, and my guitar.</p>
+<div class="song"><a class="btn hot" id="ytl" href="https://www.youtube.com/" target="_blank" rel="noopener">▶ Listen on YouTube</a><input class="yt" id="yti" placeholder="Paste your YouTube link here" aria-label="YouTube link"></div>
+<div class="frame g3" data-s="m1" style="aspect-ratio:4/5;max-width:420px"><span>Guitar photo</span></div></section>
+
+<section class="s" id="contact" style="text-align:center"><h3 class="sec">Let's build something that slaps</h3><p class="lead" style="margin-inline:auto">An internship, a project, an art card or just a hello.</p>
+<form id="form"><label>Name<input name="n" required autocomplete="name"></label><label>Email<input name="e" type="email" required autocomplete="email"></label><label>Message<textarea name="m" required></textarea></label><button class="btn hot" type="submit">Send message</button><p id="msg" role="status"></p></form></section>
+<footer><a href="https://github.com/Grecia1225" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/grecia007/" target="_blank" rel="noopener">LinkedIn</a> · <a href="mailto:thellagrecia@gmail.com">thellagrecia@gmail.com</a><br>© 2026 Thella Grecia Sannuthi</footer>
+
+<div id="bar"><span id="etip">Click text to edit. Click a photo to replace it (frames also take short videos). 🖼 sets a section background.</span><input class="eo" id="acc" type="color" value="#ff4b1f" aria-label="Accent colour"><button class="btn eo" id="rst">Reset</button><button class="btn hot" id="ebtn">✎ Edit</button></div>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)},reduce=matchMedia("(prefers-reduced-motion: reduce)").matches,n=0;
+var t=setInterval(function(){n=Math.min(100,n+(reduce?25:Math.ceil(Math.random()*4)));$("count").textContent=n;$("fill").style.width=n+"%";if(n>=100){clearInterval(t);setTimeout(function(){$("loader").classList.add("done")},300)}},30);
+var H=$("hero"),b=$("blob"),mx=innerWidth/2,my=innerHeight/2,bx=mx,by=my;
+function hp(){H.style.setProperty("--p",Math.min(1,Math.max(0,scrollY/Math.max(1,H.offsetHeight-innerHeight))))}
+addEventListener("scroll",hp,{passive:true});addEventListener("resize",hp);hp();
+addEventListener("pointermove",function(e){mx=e.clientX;my=e.clientY});
+(function l(){bx+=(mx-bx)*.06;by+=(my-by)*.06;b.style.transform="translate("+bx+"px,"+by+"px)";requestAnimationFrame(l)})();
+// edit mode + storage
+var KEY="gs3",S={t:{},i:{},b:{},a:null,y:null},ed=false;
+try{var ld=JSON.parse(localStorage.getItem(KEY));if(ld)S=ld}catch(e){}S.t=S.t||{};S.i=S.i||{};S.b=S.b||{};
+try{var o=JSON.parse(localStorage.getItem("gs-edit"));if(o&&o.i){var mp={h:"hero",a0:"a1",a1:"a2",a2:"a3",a3:"a4",p0:"l1",p1:"l2",p2:"l3",p3:"l4",p4:"l5"},ch=0;for(var k in mp)if(o.i[k]&&!S.i[mp[k]]){S.i[mp[k]]=o.i[k];ch=1}if(o.a&&!S.a){S.a=o.a;ch=1}if(ch)sv()}}catch(e){}
+function sv(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){$("etip").textContent="Storage is full. Use smaller photos."}}
+var fi=document.createElement("input");fi.type="file";
+function shrink(f,max,cb){var im=new Image(),u=URL.createObjectURL(f);im.onload=function(){var k=Math.min(1,max/Math.max(im.width,im.height)),c=document.createElement("canvas");c.width=im.width*k;c.height=im.height*k;c.getContext("2d").drawImage(im,0,0,c.width,c.height);URL.revokeObjectURL(u);cb(c.toDataURL("image/jpeg",.82))};im.src=u}
+function pick(acc,cb){fi.accept=acc;fi.value="";fi.onchange=function(){if(fi.files[0])cb(fi.files[0])};fi.click()}
+var FD;function fdb(cb){if(FD)return cb(FD);try{var r=indexedDB.open("gs-frames3",1);r.onupgradeneeded=function(){r.result.createObjectStore("f")};r.onsuccess=function(){FD=r.result;cb(FD)};r.onerror=function(){cb(null)}}catch(e){cb(null)}}
+function fput(k,v){fdb(function(d){if(d)d.transaction("f","readwrite").objectStore("f").put(v,k)})}
+function fdel(k){fdb(function(d){if(d)d.transaction("f","readwrite").objectStore("f").delete(k)})}
+function show(fr,u,vd){var o=fr.querySelector("img,video");if(o)o.remove();var m=document.createElement(vd?"video":"img");if(vd){m.muted=m.loop=m.autoplay=m.playsInline=true;m.setAttribute("playsinline","")}else m.alt="";m.src=u;fr.insertBefore(m,fr.firstChild);if(vd){var p=m.play();if(p&&p.catch)p.catch(function(){})}var s=fr.querySelector("span");if(s)s.style.display="none"}
+document.querySelectorAll(".frame[data-s]").forEach(function(fr){var k=fr.getAttribute("data-s");if(S.i[k])show(fr,S.i[k]);
+fr.onclick=function(){if(!ed)return;pick("image/*,video/*",function(f){if(f.type.indexOf("video")==0){fput(k,f);show(fr,URL.createObjectURL(f),1);delete S.i[k];sv()}else shrink(f,1100,function(d){show(fr,d);S.i[k]=d;fdel(k);sv()})})}});
+fdb(function(d){if(!d)return;document.querySelectorAll(".frame[data-s]").forEach(function(fr){var q=d.transaction("f").objectStore("f").get(fr.getAttribute("data-s"));q.onsuccess=function(){if(q.result)show(fr,URL.createObjectURL(q.result),1)}})});
+var P=$("portrait"),PI=P.querySelectorAll("img"),PH="data:image/svg+xml,"+encodeURIComponent("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 400'><defs><radialGradient id='g' cx='50%' cy='38%' r='55%'><stop offset='0' stop-color='#ffd9b8'/><stop offset='1' stop-color='#3a1a2a'/></radialGradient></defs><rect width='300' height='400' fill='#2a2440'/><circle cx='150' cy='150' r='62' fill='url(#g)'/><path d='M40 400c0-90 50-130 110-130s110 40 110 130z' fill='url(#g)'/></svg>");
+function setHero(u){PI.forEach(function(i){i.src=u})}setHero(S.i.hero||PH);
+P.onclick=function(){if(ed)pick("image/*",function(f){shrink(f,1000,function(d){setHero(d);S.i.hero=d;sv()})})};
+addEventListener("pointermove",function(e){var r=P.getBoundingClientRect();P.style.setProperty("--x",(e.clientX-r.left)+"px");P.style.setProperty("--y",(e.clientY-r.top)+"px")});
+var LS=[],h=$("name");["Thella","Grecia","Sannuthi"].forEach(function(w){var d=document.createElement("span");d.className="w";d.setAttribute("aria-hidden","true");w.split("").forEach(function(c){var s=document.createElement("span");s.className="l";s.textContent=c==" "?"\u00a0":c;d.appendChild(s);LS.push(s)});h.appendChild(d)});
+function setW(e,w){e.style.fontVariationSettings='"wght" '+w;e.style.fontWeight=w}
+addEventListener("pointermove",function(e){LS.forEach(function(s){var r=s.getBoundingClientRect(),d=Math.hypot(e.clientX-(r.left+r.width/2),e.clientY-(r.top+r.height/2));setW(s,Math.round(300+600*Math.max(0,1-d/220)))})});
+if(!reduce)LS.forEach(function(s,i){setTimeout(function(){setW(s,900);setTimeout(function(){setW(s,300)},500)},900+i*70)});
+var RL=["AI engineer","artist","singer","guitarist","photographer","team lead"],ri=0;
+if(!reduce)setInterval(function(){ri=(ri+1)%RL.length;$("role").textContent=RL[ri]},1900);
+document.querySelectorAll("section[data-bg]").forEach(function(s){var id=s.id,d=document.createElement("div");d.className="bgs";s.insertBefore(d,s.firstChild);if(S.b[id])d.style.backgroundImage="url("+S.b[id]+")";
+var x=document.createElement("button");x.className="btn bgb";x.textContent="🖼 Set background";x.onclick=function(){pick("image/*",function(f){shrink(f,1400,function(u){d.style.backgroundImage="url("+u+")";S.b[id]=u;sv()})})};s.appendChild(x)});
+var ET=[].slice.call(document.querySelectorAll("h3.sec,.lead,.bio,.tl h4,.tl p,.tl time,.card h4,.card p,.grp h4,.grp i"));
+ET.forEach(function(el,i){if(S.t[i]!=null)el.textContent=S.t[i];el.oninput=function(){S.t[i]=el.textContent;sv()}});
+var yl=$("ytl"),yi=$("yti");if(S.y){yl.href=S.y;yi.value=S.y}yi.oninput=function(){var v=yi.value.trim();if(/^https?:\/\//.test(v)){yl.href=v;S.y=v;sv()}};
+function acc(c){var r=document.documentElement.style;r.setProperty("--ember",c);r.setProperty("--glow","color-mix(in srgb,"+c+" 60%,#fff)")}
+if(S.a){acc(S.a);$("acc").value=S.a}$("acc").oninput=function(){acc(this.value);S.a=this.value;sv()};
+$("ebtn").onclick=function(){ed=!ed;document.body.classList.toggle("ed",ed);this.textContent=ed?"Done":"✎ Edit";ET.forEach(function(el){if(ed)el.setAttribute("contenteditable","true");else el.removeAttribute("contenteditable")})};
+$("rst").onclick=function(){if(confirm("Remove all your edits and photos from this browser?")){try{localStorage.removeItem(KEY)}catch(e){}fdb(function(d){if(d)d.transaction("f","readwrite").objectStore("f").clear();location.reload()})}};
+// photos from an images/ folder (works once the site is on your own hosting)
+function tryImg(u,fn,no){var i=new Image();i.onload=function(){fn(u)};if(no)i.onerror=no;i.src=u}
+document.querySelectorAll(".frame[data-s]").forEach(function(fr){var k=fr.getAttribute("data-s");if(!fr.querySelector("img,video"))tryImg("images/"+k+".jpg",function(u){show(fr,u)},function(){var v=document.createElement("video");v.muted=true;v.preload="auto";v.onloadeddata=function(){show(fr,"images/"+k+".mp4",1)};v.src="images/"+k+".mp4"})});
+if(!S.i.hero)tryImg("images/hero.jpg",setHero);
+$("form").addEventListener("submit",function(e){e.preventDefault();var f=new FormData(e.target);location.href="mailto:thellagrecia@gmail.com?subject="+encodeURIComponent("Hello from "+f.get("n"))+"&body="+encodeURIComponent(f.get("m")+"\n\n"+f.get("n")+" ("+f.get("e")+")");$("msg").textContent="Opening your email app to send this."});
+})();
+</script></body></html>
