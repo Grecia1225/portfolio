@@ -169,3 +169,4 @@ if(!S.i.hero)tryImg("images/hero.jpg",setHero);
 $("form").addEventListener("submit",function(e){e.preventDefault();var f=new FormData(e.target);location.href="mailto:thellagrecia@gmail.com?subject="+encodeURIComponent("Hello from "+f.get("n"))+"&body="+encodeURIComponent(f.get("m")+"\n\n"+f.get("n")+" ("+f.get("e")+")");$("msg").textContent="Opening your email app to send this."});
 })();
 </script></body></html>
+
